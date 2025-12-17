@@ -1,24 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignupPage from "./pages/SignupPage";
-import LoginPage from "./pages/LoginPage";
-import ProfilePage from "./pages/ProfilePage";
-import DashboardPage from "./pages/DashboardPage";
-import MakeNewProfile from "./pages/MakeNewProfile";
-import MovieDetailPage from "./pages/MovieDetailPage";
-import MyListPage from "./pages/MyListPage";
-import RequireAuth from "./components/RequireAuth";
-import RedirectIfAuth from "./components/RedirectIfAuth";
+
+const SignupPage = lazy(() => import("./pages/SignupPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage"));
+const DashboardPage = lazy(() => import("./pages/DashboardPage"));
+const MakeNewProfile = lazy(() => import("./pages/MakeNewProfile"));
+const MovieDetailPage = lazy(() => import("./pages/MovieDetailPage"));
+const MyListPage = lazy(() => import("./pages/MyListPage"));
+const RequireAuth = lazy(() => import("./components/RequireAuth"));
+const RedirectIfAuth = lazy(() => import("./components/RedirectIfAuth"));
+const Movies = lazy(() => import("./pages/Movies"));
+const AllMoviesPage = lazy(() => import("./pages/AllMoviesPage"));
+const AdminPanelPage = lazy(() => import("./pages/AdminPanelPage"));
+const HistoryPage = lazy(() => import("./pages/HistoryPage"));
+const AdminLogin = lazy(() => import('./pages/AdminLogin'));
+const TVShows = lazy(() => import("./pages/TVShows"));
+const AllTVShowsPage = lazy(() => import("./pages/AllTVShowsPage"));
+// import SignupPage from "./pages/SignupPage";
+// import LoginPage from "./pages/LoginPage";
+// import ProfilePage from "./pages/ProfilePage";
+// import DashboardPage from "./pages/DashboardPage";
+// import MakeNewProfile from "./pages/MakeNewProfile";
+// import MovieDetailPage from "./pages/MovieDetailPage";
+// import MyListPage from "./pages/MyListPage";
+// import RequireAuth from "./components/RequireAuth";
+// import RedirectIfAuth from "./components/RedirectIfAuth";
 import { useDispatch } from "react-redux";
 import { setSelectedProfile } from "./features/profiles/profileSlice";
 import { setUser } from "./features/user/userSlice";
-import Movies from "./pages/Movies";
-import AllMoviesPage from "./pages/AllMoviesPage";
-import AdminPanelPage from "./pages/AdminPanelPage";
-import HistoryPage from "./pages/HistoryPage";
-import AdminLogin from './pages/AdminLogin';
-import TVShows from "./pages/TVShows";
-import AllTVShowsPage from "./pages/AllTVShowsPage";
+// import Movies from "./pages/Movies";
+// import AllMoviesPage from "./pages/AllMoviesPage";
+// import AdminPanelPage from "./pages/AdminPanelPage";
+// import HistoryPage from "./pages/HistoryPage";
+// import AdminLogin from './pages/AdminLogin';
+// import TVShows from "./pages/TVShows";
+// import AllTVShowsPage from "./pages/AllTVShowsPage";
 
 
 function App() {
@@ -44,6 +61,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route
           path="/"
@@ -166,6 +184,7 @@ function App() {
           }
         />
       </Routes>
+    </Suspense>
     </BrowserRouter>
   );
 }
