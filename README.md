@@ -119,14 +119,6 @@ _Empowering seamless streaming experiences, effortlessly connected._
 
 ---
 
-## Screenshots
-
-> _Add screenshots here for: Home, Movie Detail, Admin Panel, My List, etc._
-=======
->>>>>>> b4609dd8625740e8d87424ff55391d30a39d6915
-
----
-
 ## Project Structure
 ````markdown
 backend
@@ -214,11 +206,3 @@ Contributions are welcome! Please follow these steps:
 5. Create a pull request.
 
 ---
-
-## License
-
-<<<<<<< HEAD
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-=======
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
->>>>>>> b4609dd8625740e8d87424ff55391d30a39d6915
