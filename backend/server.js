@@ -27,7 +27,7 @@ app.use(express.json());
 // Middleware to parse cookies in requests
 app.use(cookieParser());
 app.use(cors({
-  origin: 'https://ott-streaming-plateform.onrender.com',
+  origin: ['https://ott-streaming-plateform.vercel.app', 'http://localhost:5173'],
   credentials: true
 }));
 
