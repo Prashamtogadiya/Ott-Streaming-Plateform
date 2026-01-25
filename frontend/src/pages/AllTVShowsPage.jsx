@@ -141,7 +141,7 @@ export default function AllTVShowsPage() {
                         ? (
                             show.Image[0].startsWith("http")
                               ? show.Image[0]
-                              : `http://localhost:5000/uploads/${show.Image[0]}`
+                              : `https://ott-streaming-plateform.onrender.com/uploads/${show.Image[0]}`
                           )
                         : "https://placehold.co/220x330?text=No+Image"
                     }

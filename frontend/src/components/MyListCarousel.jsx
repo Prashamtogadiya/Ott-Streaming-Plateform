@@ -121,7 +121,7 @@ export default function MyListCarousel({
                       ? (
                           movie.Image[0].startsWith("http")
                             ? movie.Image[0]
-                            : `http://localhost:5000/uploads/${movie.Image[0]}`
+                            : `https://ott-streaming-plateform.onrender.com/uploads/${movie.Image[0]}`
                         )
                       : "https://placehold.co/350x180?text=No+Image"
                   }

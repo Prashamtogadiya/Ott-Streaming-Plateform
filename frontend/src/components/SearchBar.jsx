@@ -43,7 +43,7 @@ const SearchBar = ({ inputRef, onBlur, inputClassName, alwaysShowDropdown = fals
     
     try {
       const res = await fetch(
-        `http://localhost:5000/api/movies/search?q=${encodeURIComponent(value)}`
+        `https://ott-streaming-plateform.onrender.com/api/movies/search?q=${encodeURIComponent(value)}`
       );
       const data = await res.json();
       setResults(data);
@@ -134,7 +134,7 @@ const SearchBar = ({ inputRef, onBlur, inputClassName, alwaysShowDropdown = fals
                     ? (
                         movie.Image[0].startsWith("http")
                           ? movie.Image[0]
-                          : `http://localhost:5000/uploads/${movie.Image[0]}`
+                          : `https://ott-streaming-plateform.onrender.com/uploads/${movie.Image[0]}`
                       )
                     : "https://placehold.co/220x330?text=No+Image"
                 }

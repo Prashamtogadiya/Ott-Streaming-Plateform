@@ -36,7 +36,7 @@ export default function HeroCarousel({ movies = [] }) {
                   Array.isArray(movie.Image) && movie.Image.length > 0
                     ? movie.Image[0].startsWith("http")
                       ? movie.Image[0]
-                      : `http://localhost:5000/uploads/${movie.Image[0]}`
+                      : `https://ott-streaming-plateform.onrender.com/uploads/${movie.Image[0]}`
                     : "https://placehold.co/220x330?text=No+Image"
                 })`,
                 filter: "brightness(0.5)",

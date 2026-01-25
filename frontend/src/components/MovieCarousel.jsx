@@ -170,7 +170,7 @@ export default function MovieCarousel({ movies, category, watchHistory = [], vie
                     ? (
                         movie.Image[0].startsWith("http")
                           ? movie.Image[0]
-                          : `http://localhost:5000/uploads/${movie.Image[0]}`
+                          : `https://ott-streaming-plateform.onrender.com/uploads/${movie.Image[0]}`
                       )
                     : "https://placehold.co/220x330?text=No+Image"
                 }

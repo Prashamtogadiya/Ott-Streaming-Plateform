@@ -6,7 +6,7 @@ function getActorImage(movie, actorIdx) {
   if (Array.isArray(movie.ActorImage) && movie.ActorImage.length > actorIdx) {
     const img = movie.ActorImage[actorIdx];
     if (img && img.startsWith("http")) return img;
-    if (img) return `http://localhost:5000/uploads/${img}`;
+    if (img) return `https://ott-streaming-plateform.onrender.com/uploads/${img}`;
   }
   return "https://placehold.co/120x180?text=No+Image";
 }

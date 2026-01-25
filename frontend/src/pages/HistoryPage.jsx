@@ -67,7 +67,7 @@ export default function HistoryPage() {
                         entry.movie.Image.length > 0
                           ? entry.movie.Image[0].startsWith("http")
                             ? entry.movie.Image[0]
-                            : `http://localhost:5000/uploads/${entry.movie.Image[0]}`
+                            : `https://ott-streaming-plateform.onrender.com/uploads/${entry.movie.Image[0]}`
                           : "https://placehold.co/220x330?text=No+Image"
                       }
                       alt={entry.movie.Title}

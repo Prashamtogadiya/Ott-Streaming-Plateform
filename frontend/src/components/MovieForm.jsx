@@ -163,7 +163,7 @@ function ImageUploadField({
                 src={
                   img.startsWith("http")
                     ? img
-                    : `http://localhost:5000/uploads/${img}`
+                    : `https://ott-streaming-plateform.onrender.com/uploads/${img}`
                 }
                 alt={label}
                 className="w-16 h-16 object-cover rounded"
