@@ -30,7 +30,7 @@ const generateTokens = (user) => {
 const isProd = "production";
 const cookieOptions = {
   httpOnly: true,
-  sameSite: isProd ? "strict" : "lax",
+  sameSite: "none",
   secure: true, 
   maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
 };
