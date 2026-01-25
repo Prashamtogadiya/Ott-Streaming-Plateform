@@ -1,21 +1,21 @@
 // Import express for creating the server
-const express = require('express');
+const express = require("express");
 // Import cookie-parser to parse cookies from requests
-const cookieParser = require('cookie-parser');
+const cookieParser = require("cookie-parser");
 // Import dotenv to load environment variables from .env file
-const dotenv = require('dotenv');
-const cors = require('cors');
-const path = require('path');
+const dotenv = require("dotenv");
+const cors = require("cors");
+const path = require("path");
 
 // Import authentication and profile,movie routes
-const authRoutes = require('./routes/auth.routes.js');
-const profileRoutes = require('./routes/profile.routes.js');
-const movieRoutes = require('./routes/movie.routes.js');
-const reviewRoutes = require('./routes/review.routes.js');
-const settingsRoutes = require('./routes/settings.routes');
+const authRoutes = require("./routes/auth.routes.js");
+const profileRoutes = require("./routes/profile.routes.js");
+const movieRoutes = require("./routes/movie.routes.js");
+const reviewRoutes = require("./routes/review.routes.js");
+const settingsRoutes = require("./routes/settings.routes");
 
 // Import MongoDB connection function
-const connectDB = require('./config/db.js');
+const connectDB = require("./config/db.js");
 
 // Load environment variables from .env file
 dotenv.config();
@@ -26,25 +26,32 @@ const app = express();
 app.use(express.json());
 // Middleware to parse cookies in requests
 app.use(cookieParser());
-app.use(cors({
-  origin: ['https://ott-streaming-plateform.vercel.app', 'http://localhost:5173'],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [
+      "https://ott-streaming-plateform.vercel.app",
+      "http://localhost:5173",
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }),
+);
+app.options('*', cors());
 
 // Serve uploaded images statically
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Mount authentication routes at /api/auth
-app.use('/api/auth', authRoutes);
+app.use("/api/auth", authRoutes);
 // Mount profile routes at /api/profiles
-app.use('/api/profiles', profileRoutes);
+app.use("/api/profiles", profileRoutes);
 // Mount movie routes at /api/movies
-app.use('/api/movies', movieRoutes);
+app.use("/api/movies", movieRoutes);
 // Mount review routes at /api/reviews
-app.use('/api/reviews', reviewRoutes);
+app.use("/api/reviews", reviewRoutes);
 // Mount setting routes at /api/settings
-app.use('/api/settings', settingsRoutes);
-
+app.use("/api/settings", settingsRoutes);
 
 // Set the port from environment or default to 5000
 const PORT = process.env.PORT || 5000;
