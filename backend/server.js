@@ -27,7 +27,7 @@ app.use(express.json());
 // Middleware to parse cookies in requests
 app.use(cookieParser());
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://ott-streaming-plateform.onrender.com',
   credentials: true
 }));
 

@@ -5,7 +5,7 @@ import { clearProfiles } from '../features/profiles/profileSlice';
 
 // Create an Axios instance for making API requests to the backend
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Base URL for all API requests
+  baseURL: 'https://ott-streaming-plateform.onrender.com/api', // Base URL for all API requests
   withCredentials: true, // Send cookies with requests (for auth)
 });
 
